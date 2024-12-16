@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .acordeon {
+            width: 50%;
+            margin: auto;
+        }
+        .acordeon-item {
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .acordeon-header {
+            background-color: #f1f1f1;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .acordeon-content {
+            padding: 10px;
+            display: none; /* Oculto inicialmente */
+            background-color: #fff;
+        }
+        .acordeon-content.active {
+            display: block; /* Mostrar si es activo */
+        }
+    </style>
+</head>
+<body>
+    <div class="acordeon">
+        <div class="acordeon-item">
+            <div class="acordeon-header">Sección 1</div>
+            <div class="acordeon-content">
+                <p>Contenido de la Sección 1.</p>
+            </div>
+        </div>
+        <div class="acordeon-item">
+            <div class="acordeon-header">Sección 2</div>
+            <div class="acordeon-content">
+                <p>Contenido de la Sección 2.</p>
+            </div>
+        </div>
+        <div class="acordeon-item">
+            <div class="acordeon-header">Sección 3</div>
+            <div class="acordeon-content">
+                <p>Contenido de la Sección 3.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Seleccionamos todos los encabezados
+        const headers = document.querySelectorAll('.acordeon-header');
+
+        // Añadimos un evento de clic a cada encabezado
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                // Encuentra el contenido asociado al encabezado
+                const content = header.nextElementSibling;
+
+                // Alternar la clase "active" para mostrar/ocultar contenido
+                content.classList.toggle('active');
+            });
+            
+        });
+        function bajaraco(){
+            const content = header.nextElementSibling;
+
+                // Alternar la clase "active" para mostrar/ocultar contenido
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
